@@ -1,0 +1,13 @@
+services:
+  api:
+    build: ./server
+    ports:
+      - "8080:8080"
+  
+  client:
+    build: ./client
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - API_SERVER=api:8080
