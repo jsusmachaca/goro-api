@@ -1,4 +1,4 @@
-// process.loadEnvFile()
+process.loadEnvFile()
 import express from 'express'
 import path from 'node:path'
 import axios from 'axios'
@@ -21,9 +21,11 @@ app.get('/', async (req, res) => {
     pageRes = pageRes.concat(reqServer.data)
   }
 
-  if (name) {
-    const ff = pageRes.filter((data: RequestData) => data.name.startsWith(name as string) )
-    return res.render('index', { data: ff })
+  if (name && name !== '') {
+    const filterData = pageRes.filter(
+      (data: RequestData) => data.name.toLowerCase().startsWith((name as string).toLowerCase())
+    )
+    return res.render('index', { data: filterData })
   }
 
   return res.render('index', { data: pageRes })
