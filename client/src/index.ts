@@ -1,4 +1,4 @@
-process.loadEnvFile()
+// process.loadEnvFile() // uncomment in development mode
 import express from 'express'
 import path from 'node:path'
 import axios from 'axios'
