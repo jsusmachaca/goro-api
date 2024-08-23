@@ -25,6 +25,17 @@ Rick and Morty album using microservices in Go and Node.js
 
 # Install
 
+## Gen RSA keys
+```sh 
+ssh-keygen -t rsa -b 2048 -m PEM -f jwt.key
+openssl rsa -inform PEM -in jwt.key -pubout > jwt.key.pub
+```
+Then move the keys to different directories.
+```sh
+mv jwt.key client
+mv jwt.key.pub server
+```
+
 ## Using Docker
 
 ### Docker compose
