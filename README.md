@@ -2,7 +2,24 @@
 
 Rick and Morty album using microservices in Go and Node.js
 
-![img](.screenshots/goroapi.webp)
+<style>
+    #con-img {
+        overflow: hidden;
+        border-radius: 20px;
+    }
+    img {
+        border-radius: 20px;
+        transform: scale(108%);
+        transition: all ease-in-out .2s;
+    }
+    img:hover {
+        transform: scale(100%);
+    }
+</style>
+
+<div id="con-img">
+    <img src=".screenshots/goroapi.webp">
+</div>
 
 
 # Install
