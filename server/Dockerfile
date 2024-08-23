@@ -6,6 +6,6 @@ COPY . .
 
 WORKDIR /app
 
-RUN go build .
+RUN go build -o goroapi cmd/web/main.go
 
 CMD [ "./goroapi" ]

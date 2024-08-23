@@ -13,7 +13,9 @@ docker cp go-server:/app/goroapi .
 printf "\e[H\e[2J\n"
 
 echo "Container created and listen on ports: "
-ports=$(docker ps | grep -o '0.0.0.0:[0-9]*')
-for port in $ports; do
-    echo "=> $port"
+containers=("express-client" "go-server")
+ports=($(docker ps | grep -o '0.0.0.0:[0-9]*'))
+
+for i in "${!containers[@]}"; do
+    echo "${containers[$i]} => ${ports[$i]}"
 done

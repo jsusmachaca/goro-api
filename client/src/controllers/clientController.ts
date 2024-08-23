@@ -13,7 +13,7 @@ export const client = async (req: Request, res: Response) => {
     const token = await genJWT()
 
     for (let i = 1; i < 3; i++) {
-      const reqServer = await axios.get(`http://${API_SERVER}/api/RnM?page=${i}`, {
+      const reqServer = await axios.get(`http://${API_SERVER}/api/rnm?page=${i}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

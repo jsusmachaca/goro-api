@@ -56,6 +56,10 @@ main {
     padding-inline: 10px;
     padding-top: 10px;
     box-shadow: 1px 10px 5px rgba(0, 0, 0, .6);
+    transition: all ease-in-out .2s;
+}
+.card:hover {
+    transform: scale(106%);
 }
 
 .card p {
