@@ -1,4 +1,4 @@
-package jsonResponse
+package utils
 
 import "time"
 
