@@ -1,7 +1,7 @@
 # GOROAPI 
 
 Rick and Morty album using microservices in Go and Node.js
-
+<!--
 <style>
     #con-img {
         overflow: hidden;
@@ -16,6 +16,7 @@ Rick and Morty album using microservices in Go and Node.js
         transform: scale(100%);
     }
 </style>
+-->
 
 <div id="con-img">
     <img src=".screenshots/goroapi.webp">
