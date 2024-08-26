@@ -12,15 +12,14 @@ export const client = async (req: Request, res: Response) => {
     let pageRes: RequestData[] = []
     const token = await genJWT()
 
-    for (let i = 1; i < 3; i++) {
-      const reqServer = await axios.get(`http://${API_SERVER}/api/rnm?page=${i}`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      pageRes = pageRes.concat(reqServer.data)
-    }
+    const reqServer: any  = await axios.get(`http://${API_SERVER}/api/rnm`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
 
+    pageRes = reqServer.data
+    
     if (name && name !== '') {
       const filterData = pageRes.filter(
         (data: RequestData) => data.name.toLowerCase().startsWith((name as string).toLowerCase())
