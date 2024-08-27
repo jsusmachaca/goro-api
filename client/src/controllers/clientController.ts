@@ -1,4 +1,4 @@
-process.loadEnvFile() // uncomment in development mode
+// process.loadEnvFile() // uncomment in development mode
 import { Request, Response } from "express"
 import axios from 'axios'
 import { RequestData } from '../types/RequestData'
