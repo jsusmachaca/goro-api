@@ -1,4 +1,4 @@
-package utils
+package util
 
 import (
 	"encoding/json"
@@ -6,11 +6,11 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/jsusmachaca/goroapi/pkg/models"
+	"github.com/jsusmachaca/goroapi/pkg/model"
 )
 
-func GetApiData() ([]models.ResultsResponse, error) {
-	allData := make([]models.ResultsResponse, 0, 400)
+func GetApiData() ([]model.ResultsResponse, error) {
+	allData := make([]model.ResultsResponse, 0, 400)
 
 	for pages := 1; pages < 21; pages++ {
 		url := fmt.Sprintf("https://rickandmortyapi.com/api/character?page=%d", pages)
@@ -34,7 +34,7 @@ func GetApiData() ([]models.ResultsResponse, error) {
 			return nil, err
 		}
 
-		var jsonRes models.JsonResponse
+		var jsonRes model.JsonResponse
 		marshErr := json.Unmarshal(data, &jsonRes)
 		if marshErr != nil {
 			fmt.Println("An error occurred while marshall data:", err)
