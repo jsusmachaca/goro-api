@@ -1,26 +1,30 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 type ResultsResponse struct {
-	ID      int    `json:"id"`
-	Name    string `json:"name"`
-	Status  string `json:"status"`
-	Species string `json:"species"`
-	Type    string `json:"type"`
-	Gender  string `json:"gender"`
+	ID      primitive.ObjectID `bson:"_id,omitempty" json:"_id"`
+	Name    string             `bson:"name" json:"name"`
+	Status  string             `bson:"status" json:"status"`
+	Species string             `bson:"species" json:"species"`
+	Type    string             `bson:"type" json:"type"`
+	Gender  string             `bson:"gender" json:"gender"`
 	Origin  struct {
-		Name string `json:"name"`
-		URL  string `json:"url"`
-	} `json:"origin"`
+		Name string `bson:"name" json:"name"`
+		URL  string `bson:"url" json:"url"`
+	} `bson:"origin" json:"origin"`
 	Location struct {
-		Name string `json:"name"`
-		URL  string `json:"url"`
-	} `json:"location"`
-	Image   string    `json:"image"`
-	Episode []string  `json:"episode"`
-	URL     string    `json:"url"`
-	Created time.Time `json:"created"`
+		Name string `bson:"name" json:"name"`
+		URL  string `bson:"url" json:"url"`
+	} `bson:"location" json:"location"`
+	Image   string    `bson:"image" json:"image"`
+	Episode []string  `bson:"episode" json:"episode"`
+	URL     string    `bson:"url" json:"url"`
+	Created time.Time `bson:"created" json:"created"`
 }
 
 type JsonResponse struct {
