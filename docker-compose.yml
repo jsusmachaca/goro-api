@@ -1,15 +1,20 @@
 services:
   api:
     build: ./server
+    env_file:
+      - .env
     environment:
-      - PORT=8080
+      - PORT=${GO_PORT}
+      - MONGO_URI=${MONGO_URI}
     ports:
       - "8080:8080"
   
   client:
     build: ./client
+    env_file:
+      - .env
+    environment:
+      - PORT=${NODE_PORT}
+      - API_SERVER=api:${GO_PORT}
     ports:
       - "3000:3000"
-    environment:
-      - PORT=3000
-      - API_SERVER=api:8080
