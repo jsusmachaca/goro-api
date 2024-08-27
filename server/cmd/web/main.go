@@ -51,6 +51,8 @@ func main() {
 	http.HandleFunc("/api/rnm", func(w http.ResponseWriter, r *http.Request) {
 		handler.SendData(w, r, client)
 	})
+	http.HandleFunc("/", handler.Index)
 
+	fmt.Printf("Server is listening on http://localhost%s\n", PORT)
 	http.ListenAndServe(PORT, nil)
 }
